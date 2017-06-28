@@ -22,6 +22,9 @@ source 'https://rubygems.org'
  gem 'bootstrap'
  gem 'figaro'
  gem 'bootstrap-sass'
+ gem 'pundit'
+ 
+
 
  group :development, :test do
    gem 'byebug'
