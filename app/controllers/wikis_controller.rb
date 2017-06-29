@@ -1,4 +1,8 @@
 class WikisController < ApplicationController
+
+  
+
+
   def create
      @wiki = Wiki.new
      @wiki.title = params[:wiki][:title]
@@ -59,5 +63,16 @@ class WikisController < ApplicationController
        flash.now[:alert] = "There was an error saving the wiki. Please try again."
        render :edit
      end
+   end
+   
+   def authorize_user
+     @wiki = Wiki.find(params[:id])
+    
+    if wiki.private
+     unless current_user == wiki.user || current_user.admin?
+       flash[:alert] = "You must be an admin or the creating user to modify posts from other users."
+       redirect_to @wiki
+     end
+    end
    end
 end
