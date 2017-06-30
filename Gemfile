@@ -23,6 +23,8 @@ source 'https://rubygems.org'
  gem 'figaro'
  gem 'bootstrap-sass'
  gem 'pundit'
+ gem 'faker'
+ 
  
 
 
