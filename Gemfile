@@ -20,10 +20,11 @@ source 'https://rubygems.org'
  gem 'turbolinks'
  gem 'devise'
 # gem 'bootstrap'
- gem 'figaro'
+ gem 'figaro', '1.0'
  gem 'bootstrap-sass'
  gem 'pundit'
  gem 'faker'
+ gem 'stripe'
  
  
 
@@ -33,7 +34,6 @@ source 'https://rubygems.org'
    gem 'spring'
    gem 'rspec-rails'
    gem 'shoulda'
-   gem 'faker'
    gem 'factory_girl_rails'
    gem 'pry-rails'
  end
