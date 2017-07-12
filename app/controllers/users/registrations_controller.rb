@@ -21,6 +21,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def update
   #   super
   # end
+  
+  def downgrade
+    current_user.standard!
+  end
 
   # DELETE /resource
   # def destroy
