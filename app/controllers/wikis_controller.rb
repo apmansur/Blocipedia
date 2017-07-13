@@ -1,7 +1,5 @@
 class WikisController < ApplicationController
 
-  
-
 
   def create
      @wiki = Wiki.new
@@ -70,7 +68,7 @@ class WikisController < ApplicationController
      @wiki = Wiki.find(params[:id])
     
     if wiki.private
-     unless current_user == wiki.user || current_user.admin?
+     unless ((current_user == wiki.user && current_user.premium?) || current_user.admin?)
        flash[:alert] = "You must be an admin or the creating user to modify posts from other users."
        redirect_to @wiki
      end

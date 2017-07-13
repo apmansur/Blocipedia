@@ -26,6 +26,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     current_user.standard!
     flash[:notice] = " #{current_user.email} has been downgraded to a standard account"
     redirect_to edit_user_registration_path
+    
+    
   end
 
   # DELETE /resource
