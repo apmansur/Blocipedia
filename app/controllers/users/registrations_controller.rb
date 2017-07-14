@@ -24,9 +24,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   
   def downgrade
     current_user.standard!
+    current_user.wikis.each do |wiki|
+      if wiki.private
+        wiki.update({private: nil})
+      end
+    end
     flash[:notice] = " #{current_user.email} has been downgraded to a standard account"
     redirect_to edit_user_registration_path
-    
     
   end
 

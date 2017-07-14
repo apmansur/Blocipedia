@@ -3,7 +3,11 @@
  <div class="row">
    <div class="col-md-8">
 
+   <div class="col-md-4">
+     <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-success' %>
+   </div>
      <% Wiki.all.each do |wiki| %>
+     <% if !wiki.private || current_user.premium? || current_user.admin? %> 
        <div class="media">
          <div class="media-body">
            <h4 class="media-heading">
@@ -15,9 +19,8 @@
            </small>
          </div>
        </div>
+       <% end %>
      <% end %>
    </div>
-   <div class="col-md-4">
-     <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-success' %>
-   </div>
+
  </div>
