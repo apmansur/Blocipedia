@@ -25,7 +25,7 @@ source 'https://rubygems.org'
  gem 'pundit'
  gem 'faker'
  gem 'stripe'
- 
+ gem 'redcarpet', '~> 3.0.0'
  
 
 
