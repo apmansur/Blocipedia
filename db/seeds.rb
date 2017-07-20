@@ -17,13 +17,23 @@ end
 #create wikis
 
 50.times do
-    Wiki.create({
+        Wiki.create({
         body:  Faker::Lorem.paragraph,
         title: Faker::Lorem.sentence,
         user: User.all.sample
     })
+ end
+    
+20.times do
+    Collaborator.create({
+        user_id: User.all.sample.id ,
+        wiki_id: Wiki.all.sample.id
+    })
+   
+    
 end
 
 puts "you now have #{User.all.count} users"
 puts "you now have #{Wiki.all.count} wikis"
 
+puts "you now have #{Collaborator.all.count} collaborators"
