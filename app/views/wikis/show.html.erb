@@ -9,7 +9,7 @@
      <br>
      <h3> Collaborators </h3>
      <% @wiki.collaborators.each do |col|%>
-     <p> <%= User.all[col.user_id].email %> </p>
+     <p> <%= User.all[(col.user_id)-1].email %> </p>
      <% end %>
       
    </div>
